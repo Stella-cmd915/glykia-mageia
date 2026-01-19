@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ζαχαροπλαστείο "Γλυκιά Μαγεία" | Χειροποίητα Γλυκά με Αγάπη</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- FullCalendar CSS -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Header με HTML5 Semantic Element -->
+    <header class="header-top bg-pink text-white py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <i class="bi bi-telephone-fill"></i> +30 2310 123456 | 
+                    <i class="bi bi-envelope-fill"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb92959d94bb9c978290929a969a9c9e929ad59c89">[email&#160;protected]</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation με 2 επίπεδα -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://via.placeholder.com/60x60/FF69B4/FFFFFF?text=GM" alt="Logo" height="50">
+                <span class="brand-text">Γλυκιά Μαγεία</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Αρχική</a>
+                    </li>
+                    
+                    <!-- Dropdown με 2 επίπεδα -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Προϊόντα
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#tortes">Τούρτες</a></li>
+                            <li><a class="dropdown-item" href="#glyká">Γλυκά Ταψιού</a></li>
+                            <li class="dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                    Αρτοποιήματα
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#tsourekia">Τσουρέκια</a></li>
+                                    <li><a class="dropdown-item" href="#psomia">Ψωμιά</a></li>
+                                    <li><a class="dropdown-item" href="#koulouria">Κουλούρια</a></li>
+                                </ul>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#seasonal">Εποχικά Προϊόντα</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Υπηρεσίες
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="order-form.html">Παραγγελία Custom Τούρτας</a></li>
+                            <li><a class="dropdown-item" href="#catering">Catering</a></li>
+                            <li><a class="dropdown-item" href="#events">Events</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Σχετικά με εμάς</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Επικοινωνία</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-pink text-white ms-2" href="my-orders.html">
+                            <i class="bi bi-person-circle"></i> Οι Παραγγελίες μου
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section με Slideshow -->
+    <section class="hero-section">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1920&h=600&fit=crop" class="d-block w-100" alt="Τούρτες">
+                    <div class="carousel-caption">
+                        <h1 class="display-3 fw-bold">Χειροποίητα Γλυκά με Αγάπη</h1>
+                        <p class="lead">Από το 1985 δημιουργούμε γλυκές στιγμές</p>
+                        <a href="order-form.html" class="btn btn-primary btn-lg">Παραγγείλτε Τώρα</a>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1588195538326-c5b1e5b80c05?w=1920&h=600&fit=crop" class="d-block w-100" alt="Custom Τούρτες">
+                    <div class="carousel-caption">
+                        <h2 class="display-4 fw-bold">Custom Τούρτες για κάθε Εκδήλωση</h2>
+                        <p class="lead">Δημιουργούμε την τούρτα των ονείρων σας</p>
+                        <a href="order-form.html" class="btn btn-primary btn-lg">Σχεδιάστε τη Δική σας</a>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=1920&h=600&fit=crop" class="d-block w-100" alt="Παραδοσιακά Γλυκά">
+                    <div class="carousel-caption">
+                        <h2 class="display-4 fw-bold">Παραδοσιακές Συνταγές</h2>
+                        <p class="lead">Γεύσεις που θυμίζουν σπίτι</p>
+                        <a href="#products" class="btn btn-primary btn-lg">Δείτε τα Προϊόντα μας</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Κεντρικό Μήνυμα -->
+    <section class="py-5 bg-light-pink">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold text-pink mb-4">Η Γλυκιά μας Ιστορία</h2>
+                    <p class="lead">Από το 1985, το "Γλυκιά Μαγεία" φτιάχνει χειροποίητα γλυκά με τα πιο εκλεκτά υλικά και μεγάλη αγάπη. Κάθε δημιούργημά μας είναι μοναδικό και φτιαγμένο με προσοχή στη λεπτομέρεια.</p>
+                    <p>Η φιλοσοφία μας είναι απλή: <strong>Ποιότητα, Γεύση, Αγάπη</strong>. Χρησιμοποιούμε μόνο φρέσκα υλικά, παραδοσιακές συνταγές και σύγχρονες τεχνικές για να δημιουργούμε γλυκά που θα θυμάστε για πάντα.</p>
+                    <div class="mt-4">
+                        <i class="bi bi-award-fill text-gold fs-4"></i>
+                        <span class="ms-2">Βραβευμένο Ζαχαροπλαστείο 2023</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1556910110-b4c8e9931cd8?w=600&h=400&fit=crop" class="img-fluid rounded shadow" alt="Το Ζαχαροπλαστείο μας">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Δημοφιλή Προϊόντα -->
+    <section id="products" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 display-6 fw-bold">Τα Δημοφιλή μας Προϊόντα</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=400&h=300&fit=crop" class="card-img-top" alt="Τούρτα Σοκολάτα">
+                        <div class="card-body">
+                            <h5 class="card-title">Τούρτα Τριπλή Σοκολάτα</h5>
+                            <p class="card-text">Πλούσια τούρτα με τρία είδη σοκολάτας και βελούδινη γκανάζ.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-pink fw-bold fs-5">45€</span>
+                                <a href="order-form.html" class="btn btn-pink">Παραγγείλτε</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <div class="badge bg-gold position-absolute top-0 end-0 m-3">Best Seller</div>
+                        <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=400&h=300&fit=crop" class="card-img-top" alt="Red Velvet">
+                        <div class="card-body">
+                            <h5 class="card-title">Red Velvet Cake</h5>
+                            <p class="card-text">Η κλασική αμερικάνικη τούρτα με cream cheese frosting.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-pink fw-bold fs-5">50€</span>
+                                <a href="order-form.html" class="btn btn-pink">Παραγγείλτε</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=400&h=300&fit=crop" class="card-img-top" alt="Cheesecake">
+                        <div class="card-body">
+                            <h5 class="card-title">New York Cheesecake</h5>
+                            <p class="card-text">Κρεμώδες cheesecake με φρέσκα φρούτα εποχής.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-pink fw-bold fs-5">40€</span>
+                                <a href="order-form.html" class="btn btn-pink">Παραγγείλτε</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=400&h=300&fit=crop" class="card-img-top" alt="Γαλακτομπούρεκο">
+                        <div class="card-body">
+                            <h5 class="card-title">Γαλακτομπούρεκο Παραδοσιακό</h5>
+                            <p class="card-text">Με τραγανό φύλλο και αρωματική κρέμα γάλακτος.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-pink fw-bold fs-5">3€/κομμάτι</span>
+                                <a href="order-form.html" class="btn btn-pink">Παραγγείλτε</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="https://images.unsplash.com/photo-1519915212116-715da71b2a8c?w=400&h=300&fit=crop" class="card-img-top" alt="Μπακλαβάς">
+                        <div class="card-body">
+                            <h5 class="card-title">Μπακλαβάς με Φιστίκι Αιγίνης</h5>
+                            <p class="card-text">Με πολυτελή γέμιση από φιστίκι Αιγίνης και μέλι.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-pink fw-bold fs-5">25€/κιλό</span>
+                                <a href="order-form.html" class="btn btn-pink">Παραγγείλτε</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=400&h=300&fit=crop" class="card-img-top" alt="Τσουρέκι">
+                        <div class="card-body">
+                            <h5 class="card-title">Τσουρέκι Σπιτικό</h5>
+                            <p class="card-text">Με μυρωδικά και αφράτη υφή που λιώνει στο στόμα.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-pink fw-bold fs-5">12€</span>
+                                <a href="order-form.html" class="btn btn-pink">Παραγγείλτε</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Υπηρεσίες -->
+    <section class="py-5 bg-cream">
+        <div class="container">
+            <h2 class="text-center mb-5 display-6 fw-bold">Οι Υπηρεσίες μας</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-box text-center p-4">
+                        <i class="bi bi-cake2 display-4 text-pink mb-3"></i>
+                        <h4>Custom Τούρτες</h4>
+                        <p>Σχεδιάζουμε και δημιουργούμε την τούρτα που ονειρεύεστε για γάμους, βαπτίσεις, γενέθλια και κάθε ξεχωριστή στιγμή.</p>
+                        <a href="order-form.html" class="btn btn-outline-pink">Δημιουργήστε τη Δική σας</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-box text-center p-4">
+                        <i class="bi bi-balloon-heart display-4 text-pink mb-3"></i>
+                        <h4>Catering Events</h4>
+                        <p>Αναλαμβάνουμε το catering για εταιρικές εκδηλώσεις, πάρτι και εκδηλώσεις κάθε είδους με επιλεγμένα γλυκά.</p>
+                        <a href="#" class="btn btn-outline-pink">Ζητήστε Προσφορά</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-box text-center p-4">
+                        <i class="bi bi-truck display-4 text-pink mb-3"></i>
+                        <h4>Δωρεάν Παράδοση</h4>
+                        <p>Δωρεάν παράδοση για παραγγελίες άνω των 50€ στην περιοχή της Θεσσαλονίκης.</p>
+                        <a href="#" class="btn btn-outline-pink">Περισσότερα</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ημερολόγιο Events -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 display-6 fw-bold">Εκδηλώσεις & Προσφορές</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div id="calendar" class="shadow-sm"></div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="alert alert-pink">
+                        <h5><i class="bi bi-gift-fill"></i> Προσφορά της Εβδομάδας</h5>
+                        <p class="mb-0">Κάθε Τρίτη: 20% έκπτωση σε όλα τα γλυκά ταψιού!</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="alert alert-gold">
+                        <h5><i class="bi bi-star-fill"></i> Πρόγραμμα Πιστότητας</h5>
+                        <p class="mb-0">Συλλέξτε πόντους και κερδίστε δώρα!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 bg-light-pink">
+        <div class="container">
+            <h2 class="text-center mb-5 display-6 fw-bold">Τι λένε οι Πελάτες μας</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="stars mb-3">
+                            <i class="bi bi-star-fill text-gold"></i>
+                            <i class="bi bi-star-fill text-gold"></i>
+                            <i class="bi bi-star-fill text-gold"></i>
+                            <i class="bi bi-star-fill text-gold"></i>
+                            <i class="bi bi-star-fill text-gold"></i>
+                        </div>
+                        <p>"Η τούρτα γάμου μας ήταν απλά τέλεια! Όχι μόνο υπέροχη στη γεύση αλλά και πανέμορφη αισθητικά."</p>
+                        <div class="author">
+                            <strong>Μαρία Κ.</strong>
+                            <small class="text-muted">Νύφη 2024</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="stars mb-3">
+                            <i class="bi bi-star-fill text-gold"></i>
+                            <i class="bi bi-star-fill text-gold"></i>
+                            <i class="bi bi-star-fill text-gold"></i>
+                            <i class="bi bi-star-fill text-gold"></i>
+                            <i class="bi bi-star-fill text-gold"></i>
+                        </div>
+                        <p>"Παραγγέλνουμε συχνά για το γραφείο μας. Πάντα φρέσκα, νόστιμα και με άψογη εξυπηρέτηση."</p>
+                        <div class="author">
+                            <strong>Γιώργος Π.</strong>
+                            <small class="text-muted">Εταιρικός Πελάτης</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="stars mb-3">
+                            <i class="bi bi-star-fill text-gold"></i>
+                            <i class="bi bi-star-fill text-gold"></i>
+                            <i class="bi bi-star-fill text-gold"></i>
+                            <i class="bi bi-star-fill text-gold"></i>
+                            <i class="bi bi-star-fill text-gold"></i>
+                        </div>
+                        <p>"Το καλύτερο γαλακτομπούρεκο που έχω δοκιμάσει! Θυμίζει της γιαγιάς μου."</p>
+                        <div class="author">
+                            <strong>Ελένη Σ.</strong>
+                            <small class="text-muted">Μόνιμη Πελάτισσα</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-5 bg-pink text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3 class="mb-3">Εγγραφείτε στο Newsletter μας</h3>
+                    <p>Λάβετε ειδικές προσφορές και ενημερώσεις για νέα προϊόντα!</p>
+                </div>
+                <div class="col-lg-6">
+                    <form class="row g-3">
+                        <div class="col-md-8">
+                            <input type="email" class="form-control" placeholder="Το email σας">
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-white w-100">Εγγραφή</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer με HTML5 Semantic Element -->
+    <footer class="footer bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-4">Ζαχαροπλαστείο "Γλυκιά Μαγεία"</h5>
+                    <p>Δημιουργούμε χειροποίητα γλυκά με αγάπη από το 1985.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-tiktok fs-4"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-youtube fs-4"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Προϊόντα</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Τούρτες</a></li>
+                        <li><a href="#" class="text-white-50">Γλυκά Ταψιού</a></li>
+                        <li><a href="#" class="text-white-50">Αρτοποιήματα</a></li>
+                        <li><a href="#" class="text-white-50">Εποχικά</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Υπηρεσίες</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="order-form.html" class="text-white-50">Custom Τούρτες</a></li>
+                        <li><a href="#" class="text-white-50">Catering</a></li>
+                        <li><a href="#" class="text-white-50">Events</a></li>
+                        <li><a href="my-orders.html" class="text-white-50">Οι Παραγγελίες μου</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h6 class="mb-3">Επικοινωνία</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt-fill text-pink"></i>
+                            Τσιμισκή 50, Θεσσαλονίκη 546 23
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone-fill text-pink"></i>
+                            +30 2310 123456
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope-fill text-pink"></i>
+                            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c4adaaa2ab84a3a8bdafada5a9a5a3a1ada5eaa3b6">[email&#160;protected]</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-clock-fill text-pink"></i>
+                            Δευ-Σαβ: 08:00-21:00<br>
+                            <span class="ms-4">Κυρ: 09:00-20:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4 bg-white">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Ζαχαροπλαστείο "Γλυκιά Μαγεία". Με την επιφύλαξη παντός δικαιώματος.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white-50 me-3">Όροι Χρήσης</a>
+                    <a href="#" class="text-white-50 me-3">Πολιτική Απορρήτου</a>
+                    <a href="admin-orders.html" class="text-white-50">Admin</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FullCalendar JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+    
+    <!-- Custom JavaScript για Ημερολόγιο -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'el',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,listWeek'
+                },
+                events: [
+                    {
+                        title: 'Προσφορά Τρίτης',
+                        daysOfWeek: ['2'], // Τρίτη
+                        backgroundColor: '#FF69B4',
+                        textColor: 'white'
+                    },
+                    {
+                        title: 'Workshop Cupcakes',
+                        start: '2025-01-25',
+                        backgroundColor: '#FFD700'
+                    },
+                    {
+                        title: 'Tasting Event',
+                        start: '2025-02-14',
+                        backgroundColor: '#FF1493'
+                    },
+                    {
+                        title: 'Εποχικά Τσουρέκια',
+                        start: '2025-03-01',
+ 

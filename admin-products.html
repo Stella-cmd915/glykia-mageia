@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Διαχείριση Προϊόντων | Γλυκιά Μαγεία</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Admin Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://via.placeholder.com/60x60/FF69B4/FFFFFF?text=GM" alt="Logo" height="40">
+                <span class="brand-text text-pink">Γλυκιά Μαγεία</span>
+                <span class="badge bg-danger ms-2">ADMIN</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="adminNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-orders.html">
+                            <i class="bi bi-bag-check"></i> Παραγγελίες
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="admin-products.html">
+                            <i class="bi bi-box-seam"></i> Προϊόντα
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-graph-up"></i> Στατιστικά
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house"></i> Επιστροφή στο Site
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle"></i> Admin User
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Ρυθμίσεις</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Αποσύνδεση</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Stats -->
+    <section class="py-4 bg-light">
+        <div class="container-fluid">
+            <div class="row g-3">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-muted mb-2">Σύνολο Προϊόντων</h6>
+                                    <h2 class="mb-0 text-pink">18</h2>
+                                </div>
+                                <div class="fs-1 text-pink">
+                                    <i class="bi bi-box-seam"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-muted mb-2">Κατηγορίες</h6>
+                                    <h2 class="mb-0 text-info">5</h2>
+                                </div>
+                                <div class="fs-1 text-info">
+                                    <i class="bi bi-tags"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-muted mb-2">Δημοφιλέστερο</h6>
+                                    <h2 class="mb-0 text-success">Red Velvet</h2>
+                                </div>
+                                <div class="fs-1 text-success">
+                                    <i class="bi bi-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-muted mb-2">Μ.Ο. Τιμή</h6>
+                                    <h2 class="mb-0 text-warning">€125</h2>
+                                </div>
+                                <div class="fs-1 text-warning">
+                                    <i class="bi bi-currency-euro"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Management -->
+    <section class="py-4">
+        <div class="container-fluid">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h3><i class="bi bi-box-seam-fill text-pink"></i> Διαχείριση Προϊόντων</h3>
+                </div>
+            </div>
+
+            <!-- Filters & Actions -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control" id="searchProducts" placeholder="Αναζήτηση προϊόντος...">
+                    </div>
+                </div>
+                
+                <div class="col-md-2">
+                    <select class="form-select" id="filterCategory" onchange="filterProducts()">
+                        <option value="">Όλες οι Κατηγορίες</option>
+                        <option value="tortes">Τούρτες</option>
+                        <option value="glyka">Γλυκά Ταψιού</option>
+                        <option value="artopoiimata">Αρτοποιήματα</option>
+                        <option value="cheesecakes">Cheesecakes</option>
+                        <option value="seasonal">Εποχικά</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-2">
+                    <select class="form-select" id="sortProducts">
+                        <option value="name">Ταξινόμηση: Όνομα</option>
+                        <option value="price-low">Τιμή: Χαμηλή-Υψηλή</option>
+                        <option value="price-high">Τιμή: Υψηλή-Χαμηλή</option>
+                        <option value="popular">Δημοφιλία</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-2">
+                    <select class="form-select" id="filterAvailability">
+                        <option value="">Διαθεσιμότητα</option>
+                        <option value="available">Διαθέσιμα</option>
+                        <option value="unavailable">Μη Διαθέσιμα</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-3">
+                    <button class="btn btn-pink w-100" data-bs-toggle="modal" data-bs-target="#addProductModal">
+                        <i class="bi bi-plus-circle"></i> Προσθήκη Νέου Προϊόντος
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="row g-4" id="productsGrid">
+                <!-- Product Card 1 -->
+                <div class="col-xl-3 col-lg-4 col-md-6 product-item" data-category="tortes">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=300&h=200&fit=crop" class="card-img-top" alt="Τριπλή Σοκολάτα">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title mb-0">Τούρτα Τριπλή Σοκολάτα</h5>
+                                <span class="badge bg-success">Διαθέσιμο</span>
+                            </div>
+                            <p class="text-muted small mb-2">
+                                <i class="bi bi-tag"></i> Κατηγορία: Τούρτες
+                            </p>
+                            <p class="card-text">Πλούσια τούρτα με τρία είδη σοκολάτας και βελούδινη γκανάζ.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-pink mb-0">€45.00</h4>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i> 4.9 (52)
+                                </div>
+                            </div>
+                            <div class="btn-group w-100">
+                                <button class="btn btn-outline-primary btn-sm" onclick="editProduct(1)">
+                                    <i class="bi bi-pencil"></i> Επεξεργασία
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" onclick="deleteProduct(1)">
+                                    <i class="bi bi-trash"></i> Διαγραφή
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="col-xl-3 col-lg-4 col-md-6 product-item" data-category="tortes">
+                    <div class="card h-100 shadow-sm">
+                        <div class="badge bg-gold position-absolute top-0 end-0 m-2">Best Seller</div>
+                        <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=300&h=200&fit=crop" class="card-img-top" alt="Red Velvet">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title mb-0">Red Velvet Cake</h5>
+                                <span class="badge bg-success">Διαθέσιμο</span>
+                            </div>
+                            <p class="text-muted small mb-2">
+                                <i class="bi bi-tag"></i> Κατηγορία: Τούρτες
+                            </p>
+                            <p class="card-text">Κλασική αμερικάνικη τούρτα με cream cheese frosting.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-pink mb-0">€50.00</h4>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i> 5.0 (87)
+                                </div>
+                            </div>
+                            <div class="btn-group w-100">
+                                <button class="btn btn-outline-primary btn-sm" onclick="editProduct(2)">
+                                    <i class="bi bi-pencil"></i> Επεξεργασία
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" onclick="deleteProduct(2)">
+                                    <i class="bi bi-trash"></i> Διαγραφή
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="col-xl-3 col-lg-4 col-md-6 product-item" data-category="cheesecakes">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=300&h=200&fit=crop" class="card-img-top" alt="Cheesecake">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title mb-0">New York Cheesecake</h5>
+                                <span class="badge bg-success">Διαθέσιμο</span>
+                            </div>
+                            <p class="text-muted small mb-2">
+                                <i class="bi bi-tag"></i> Κατηγορία: Cheesecakes
+                            </p>
+                            <p class="card-text">Κρεμώδες cheesecake με φρέσκα φρούτα εποχής.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-pink mb-0">€40.00</h4>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i> 4.8 (43)
+                                </div>
+                            </div>
+                            <div class="btn-group w-100">
+                                <button class="btn btn-outline-primary btn-sm" onclick="editProduct(3)">
+                                    <i class="bi bi-pencil"></i> Επεξεργασία
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" onclick="deleteProduct(3)">
+                                    <i class="bi bi-trash"></i> Διαγραφή
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="col-xl-3 col-lg-4 col-md-6 product-item" data-category="glyka">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=300&h=200&fit=crop" class="card-img-top" alt="Γαλακτομπούρεκο">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title mb-0">Γαλακτομπούρεκο</h5>
+                                <span class="badge bg-success">Διαθέσιμο</span>
+                            </div>
+                            <p class="text-muted small mb-2">
+                                <i class="bi bi-tag"></i> Κατηγορία: Γλυκά Ταψιού
+                            </p>
+                            <p class="card-text">Παραδοσιακό με τραγανό φύλλο και αρωματική κρέμα.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-pink mb-0">€3.00<small>/τεμ</small></h4>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i> 4.7 (38)
+                                </div>
+                            </div>
+                            <div class="btn-group w-100">
+                                <button class="btn btn-outline-primary btn-sm" onclick="editProduct(4)">
+                                    <i class="bi bi-pencil"></i> Επεξεργασία
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" onclick="deleteProduct(4)">
+                                    <i class="bi bi-trash"></i> Διαγραφή
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="col-xl-3 col-lg-4 col-md-6 product-item" data-category="glyka">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1519915212116-715da71b2a8c?w=300&h=200&fit=crop" class="card-img-top" alt="Μπακλαβάς">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title mb-0">Μπακλαβάς Φιστίκι</h5>
+                                <span class="badge bg-warning text-dark">Περιορισμένη Διαθεσιμότητα</span>
+                            </div>
+                            <p class="text-muted small mb-2">
+                                <i class="bi bi-tag"></i> Κατηγορία: Γλυκά Ταψιού
+                            </p>
+                            <p class="card-text">Με πολυτελή γέμιση από φιστίκι Αιγίνης και μέλι.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-pink mb-0">€25.00<small>/κg</small></h4>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i> 4.9 (61)
+                                </div>
+                            </div>
+                            <div class="btn-group w-100">
+                                <button class="btn btn-outline-primary btn-sm" onclick="editProduct(5)">
+                                    <i class="bi bi-pencil"></i> Επεξεργασία
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" onclick="deleteProduct(5)">
+                                    <i class="bi bi-trash"></i> Διαγραφή
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="col-xl-3 col-lg-4 col-md-6 product-item" data-category="artopoiimata">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=300&h=200&fit=crop" class="card-img-top" alt="Τσουρέκι">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title mb-0">Τσουρέκι Σπιτικό</h5>
+                                <span class="badge bg-danger">Μη Διαθέσιμο</span>
+                            </div>
+                            <p class="text-muted small mb-2">
+                                <i class="bi bi-tag"></i> Κατηγορία: Αρτοποιήματα
+                            </p>
+                            <p class="card-text">Με μυρωδικά και αφράτη υφή που λιώνει στο στόμα.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-pink mb-0">€12.00</h4>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i> 4.6 (29)
+                                </div>
+                            </div>
+                            <div class="btn-group w-100">
+                                <button class="btn btn-outline-primary btn-sm" onclick="editProduct(6)">
+                                    <i class="bi bi-pencil"></i> Επεξεργασία
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" onclick="deleteProduct(6)">
+                                    <i class="bi bi-trash"></i> Διαγραφή
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 7 -->
+                <div class="col-xl-3 col-lg-4 col-md-6 product-item" data-category="tortes">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=300&h=200&fit=crop" class="card-img-top" alt="Tiramisu">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title mb-0">Τούρτα Tiramisu</h5>
+                                <span class="badge bg-success">Διαθέσιμο</span>
+                            </div>
+                            <p class="text-muted small mb-2">
+                                <i class="bi bi-tag"></i> Κατηγορία: Τούρτες
+                            </p>
+                            <p class="card-text">Αυθεντική ιταλική συνταγή με mascarpone και καφέ.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-pink mb-0">€48.00</h4>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i> 4.8 (35)
+                                </div>
+                            </div>
+                            <div class="btn-group w-100">
+                                <button class="btn btn-outline-primary btn-sm" onclick="editProduct(7)">
+                                    <i class="bi bi-pencil"></i> Επεξεργασία
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" onclick="deleteProduct(7)">
+                                    <i class="bi bi-trash"></i> Διαγραφή
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 8 -->
+                <div class="col-xl-3 col-lg-4 col-md-6 product-item" data-category="seasonal">
+                    <div class="card h-100 shadow-sm">
+                        <div class="badge bg-info position-absolute top-0 end-0 m-2">Εποχικό</div>
+                        <img src="https://images.unsplash.com/photo-1579372786545-d24232daf58c?w=300&h=200&fit=crop" class="card-img-top" alt="Βασιλόπιτα">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title mb-0">Βασιλόπιτα</h5>
+                                <span class="badge bg-success">Διαθέσιμο</span>
+                            </div>
+                            <p class="text-muted small mb-2">
+                                <i class="bi bi-tag"></i> Κατηγορία: Εποχικά
+                            </p>
+                            <p class="card-text">Παραδοσιακή βασιλόπιτα για την πρωτοχρονιά.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-pink mb-0">€25.00</h4>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i> 4.9 (76)
+                                </div>
+                            </div>
+                            <div class="btn-group w-100">
+                                <button class="btn btn-outline-primary btn-sm" onclick="editProduct(8)">
+                                    <i class="bi bi-pencil"></i> Επεξεργασία
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" onclick="deleteProduct(8)">
+                                    <i class="bi bi-trash"></i> Διαγραφή
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add/Edit Product Modal -->
+    <div class="modal fade" id="addProductModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-plus-circle"></i> Προσθήκη Νέου Προϊόντος</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="productForm">
+                        <div class="row g-3">
+                            <div class="col-md-8">
+                                <label class="form-label">Όνομα Προϊόντος *</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label class="form-label">Κατηγορία *</label>
+                                <select class="form-select" required>
+                                    <option value="">Επιλέξτε...</option>
+                                    <option>Τούρτες</option>
+                                    <option>Γλυκά Ταψιού</option>
+                                    <option>Αρτοποιήματα</option>
+                                    <option>Cheesecakes</option>
+                                    <option>Εποχικά</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label class="form-label">Τιμή (€) *</label>
+                                <input type="number" step="0.01" class="form-control" required>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label class="form-label">Μονάδα Μέτρησης</label>
+                                <select class="form-select">
+                                    <option>τεμάχιο</option>
+                                    <option>κιλό</option>
+                                    <option>γραμμάριο</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label class="form-label">Διαθεσιμότητα *</label>
+                                <select class="form-select" required>
+                                    <option>Διαθέσιμο</option>
+                                    <option>Μη Διαθέσιμο</option>
+                                    <option>Περιορισμένη Διαθεσιμότητα</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label class="form-label">Περιγραφή *</label>
+                                <textarea class="form-control" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label class="form-label">Εικόνα Προϊόντος</label>
+                                <input type="file" class="form-control" accept="image/*">
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="isBestseller">
+                                    <label class="form-check-label" for="isBestseller">
+                                        Best Seller
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="isSeasonal">
+                                    <label class="form-check-label" for="isSeasonal">
+                                        Εποχικό Προϊόν
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ακύρωση</button>
+                    <button type="button" class="btn btn-pink" onclick="saveProduct()">
+                        <i class="bi bi-save"></i> Αποθήκευση
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Filter Products
+        function filterProducts() {
+            const category = document.getElementById('filterCategory').value;
+            const searchTerm = document.getElementById('searchProducts').value.toLowerCase();
+            const items = document.querySelectorAll('.product-item');
+            
+            items.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                const text = item.textContent.toLowerCase();
+                
+                const matchesCategory = !category || itemCategory === category;
+                const matchesSearch = !searchTerm || text.includes(searchTerm);
+                
+                item.style.display = (matchesCategory && matchesSearch) ? '' : 'none';
+            });
+        }
+
+        document.getElementById('searchProducts').addEventListener('input', filterProducts);
+
+        // Edit Product
+        function editProduct(productId) {
+            alert('Επεξεργασία προϊόντος #' + productId);
+            const modal = new bootstrap.Modal(document.getElementById('addProductModal'));
+            document.querySelector('#addProductModal .modal-title').innerHTML = 
+                '<i class="bi bi-pencil"></i> Επεξεργασία Προϊόντος';
+            modal.show();
+        }
+
+        // Delete Product
+        function deleteProduct(productId) {
+            if (confirm('Είστε σίγουροι ότι θέλετε να διαγράψετε αυτό το προϊόν;')) {
+                alert('Το προϊόν διαγράφηκε επιτυχώς!');
+            }
+        }
+
+        // Save Product
+        function saveProduct() {
+            alert('Το προϊόν αποθηκεύτηκε επιτυχώς!');
+            bootstrap.Modal.getInstance(document.getElementById('addProductModal')).hide();
+        }
+    </script>
+</body>
+</html>
